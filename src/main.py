@@ -18,5 +18,9 @@ def run():
     return app.exec()
 
 
+def main():
+    print("hot reload")
+
+
 if __name__ == '__main__':
     sys.exit(run())

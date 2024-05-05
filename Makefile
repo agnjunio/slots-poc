@@ -2,6 +2,7 @@
 
 VENV = venv
 PYTHON = $(VENV)/bin/python3
+PY_HOT_RELOAD = $(VENV)/bin/py-hot-reload
 PIP = $(VENV)/bin/pip
 
 SRC = src
@@ -14,6 +15,9 @@ install: $(VENV)/bin/activate requirements.txt
 
 run: $(VENV)/bin/activate
 	$(PYTHON) $(SRC)/main.py
+
+dev: $(VENV)/bin/activate
+	$(PY_HOT_RELOAD) $(SRC)/main.py
 
 clean:
 	rm -rf __pycache__

@@ -1,4 +1,4 @@
-import QtQuick.Window 2.2
+import Theme
 import QtQuick 2.3
 
 Window {
@@ -12,9 +12,17 @@ Window {
     Rectangle {
         id: root
 
-        width: parent.width
-        height: parent.height
+        anchors.fill: parent
 
-        color: "blue"
+        color: Theme.background
+
+        TextInput {
+            id: login
+
+            text: "Login"
+            color: "#cccccc"
+
+            anchors.horizontalCenter: parent.horizontalCenter
+        }
     }
 }
