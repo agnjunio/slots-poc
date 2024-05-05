@@ -1,16 +1,15 @@
 import sys
 
 from pathlib import Path
-from PyQt6.QtQml import QQmlApplicationEngine
-from PyQt6.QtWidgets import QApplication
+from PySide6.QtGui import QGuiApplication
+from PySide6.QtQml import QQmlApplicationEngine
 
 
 def run():
-    app = QApplication(sys.argv)
-
+    app = QGuiApplication(sys.argv)
     engine = QQmlApplicationEngine()
     qml_file = Path(__file__).resolve().parent / "main.qml"
-    engine.load(qml_file.as_uri())
+    engine.load(qml_file)
 
     if not engine.rootObjects():
         return -1
@@ -18,9 +17,5 @@ def run():
     return app.exec()
 
 
-def main():
-    print("hot reload")
-
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     sys.exit(run())

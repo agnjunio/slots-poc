@@ -1,11 +1,11 @@
-import Theme
-import QtQuick 2.3
+import QtQuick
+import QtQuick.Window
 
 Window {
-    visible: true
+    width: 640
+    height: 480
 
-    width: 700
-    height: 500
+    visible: true
 
     title: qsTr("Login")
 
@@ -13,8 +13,6 @@ Window {
         id: root
 
         anchors.fill: parent
-
-        color: Theme.background
 
         TextInput {
             id: login
