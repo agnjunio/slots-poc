@@ -18,7 +18,14 @@ def run():
     if not engine.rootObjects():
         return -1
 
+    root = engine.rootObjects()[0]
+    root.loginClicked.connect(login)
+
     return app.exec()
+
+
+def login(username, password):
+    print("login:", username, " password: ", password)
 
 
 if __name__ == "__main__":

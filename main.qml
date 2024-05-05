@@ -11,6 +11,8 @@ ApplicationWindow {
 
     title: "Slots POC"
 
+    signal loginClicked(string username, string password)
+
     background: Rectangle {
         gradient: Gradient {
             GradientStop {
@@ -64,8 +66,10 @@ ApplicationWindow {
 
             Button {
                 text: "Login"
-
                 Layout.fillWidth: true
+                onClicked: {
+                    loginClicked(login.text, password.text);
+                }
             }
         }
     }
